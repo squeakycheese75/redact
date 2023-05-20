@@ -2,7 +2,7 @@
 
 Redact
 
-Why, we built Redact as a faster, less compute heavy alternate to [Redactrus](https://github.com/whuang8/redactrus). Redactrus is a great project and provides a lot of flexiblity. We had issues with it's usage of regex's, in that we found that with our log volume the Redactrus was consuming significant resources. Redact uses Go's struct tagging to allow the tagging of fileds that you want to redact the value.
+We developed Redact as a faster and more resource-efficient alternative to [Redactrus](https://github.com/whuang8/redactrus). While Redactrus is a great project that offers considerable flexibility, we encountered challenges with its use of regular expressions. Specifically, when dealing with our log volume, Redactrus consumed significant computational resources. In contrast, Redact utilizes Go's struct tagging feature, enabling the tagging of specific fields for value redaction.
 
 ### Usage
 
