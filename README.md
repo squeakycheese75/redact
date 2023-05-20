@@ -2,7 +2,9 @@
 
 Redact
 
-##### Example
+Why, we built Redact as a faster, less compute heavy alternate to [Redactrus](https://github.com/whuang8/redactrus). Redactrus is a great project and provides a lot of flexiblity. We had issues with it's usage of regex's, in that we found that with our log volume the Redactrus was consuming significant resources. Redact uses Go's struct tagging to allow the tagging of fileds that you want to redact the value.
+
+### Usage
 
 To use Redact, with logrus
 
@@ -81,10 +83,3 @@ results...
 }
 
 ```
-
-Why,
-
-So
-
-If you're looking for more flexibility with regards to redacting yoor logs then take a look at
-[Redactrus](https://github.com/whuang8/redactrus)
