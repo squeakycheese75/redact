@@ -1,10 +1,10 @@
-# Redactly
+# Redact
 
-Redactly
+Redact
 
 ##### Example
 
-To use Redactly, with logrus
+To use Redact, with logrus
 
 ```go
 package main
@@ -13,7 +13,7 @@ import (
 	"encoding/json"
 
 	log "github.com/sirupsen/logrus"
-	"github.com/squeakycheese75/redactly"
+	"github.com/squeakycheese75/redact"
 )
 
 type Guest struct {
@@ -45,10 +45,10 @@ func main() {
 		panic("error marshalling Party")
 	}
 
-	log.WithFields(log.Fields{
+    log.WithFields(log.Fields{
 		"animal": "walrus",
-		"party":  redactly.Clean(myParty, payloadBytes),
-	}).Info("A walrus is having a party")
+		"party":  redact.Redact(myParty),
+	}).Info("A walrus is having a [REDACTED] party")
 }
 ```
 

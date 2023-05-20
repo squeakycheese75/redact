@@ -1,4 +1,4 @@
-package redactly
+package redact
 
 import (
 	"encoding/json"
@@ -16,7 +16,7 @@ func redactStructFields(obj interface{}) {
 	typ := val.Type()
 	for i := 0; i < typ.NumField(); i++ {
 		field := typ.Field(i)
-		tagVal, tagExists := field.Tag.Lookup("redactly")
+		tagVal, tagExists := field.Tag.Lookup("redact")
 
 		switch field.Type.Kind() {
 		case reflect.Pointer:
@@ -50,7 +50,7 @@ func redactFormFields(obj interface{}) {
 	typ := val.Type()
 	for i := 0; i < typ.NumField(); i++ {
 		field := typ.Field(i)
-		tagVal, tagExists := field.Tag.Lookup("redactly")
+		tagVal, tagExists := field.Tag.Lookup("redact")
 
 		switch field.Type.Kind() {
 		case reflect.Pointer:
@@ -78,7 +78,7 @@ func redactHeaderField(k string, redactList *[]string) bool {
 	return false
 }
 
-func DecodeForm[T any](target *T, querystring string) interface{} {
+func RedactForm[T any](target *T, querystring string) interface{} {
 	form, err := url.ParseQuery(querystring)
 	if err != nil {
 		return err.Error()

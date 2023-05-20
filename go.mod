@@ -1,4 +1,4 @@
-module github.com/squeakycheese75/redactly
+module github.com/squeakycheese75/redact
 
 go 1.20
 
