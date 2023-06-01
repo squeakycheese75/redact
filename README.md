@@ -2,11 +2,11 @@
 
 ## Why
 
-We developed Redact as a faster and more resource-efficient alternative to [Redactrus](https://github.com/whuang8/redactrus). While Redactrus is a great project that offers considerable flexibility, we encountered challenges with its use of regular expressions. Specifically, when dealing with our log volume, Redactrus consumed significant computational resources. In contrast, Redact utilizes Go's struct tagging feature, enabling the tagging of specific fields for value redaction.
+Redact is as a fast, resource-efficient library for redacting [Logrus](https://github.com/sirupsen/logrus) logs using struct tags.
 
 ## Usage
 
-To use Redact, with logrus
+To use Redact, with logrus:
 
 ```go
 package main
@@ -42,10 +42,11 @@ func main() {
 		Venue:     "Barrys Place",
 	}
 
-	payloadBytes, err := json.Marshal(myParty)
-	if err != nil {
-		panic("error marshalling Party")
-	}
+	log.WithFields(log.Fields{
+		"animal": "walrus",
+		"party":  myParty,
+	}).Info("A walrus is having a party")
+
 
     log.WithFields(log.Fields{
 		"animal": "walrus",
@@ -83,3 +84,7 @@ results...
 }
 
 ```
+
+## Alternates
+
+Take a look at [Redactrus](https://github.com/whuang8/redactrus).
