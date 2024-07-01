@@ -3,7 +3,7 @@ module github.com/squeakycheese75/redact
 go 1.20
 
 require (
-	github.com/gorilla/schema v1.2.0
+	github.com/gorilla/schema v1.4.1
 	github.com/sirupsen/logrus v1.9.0
 )
 
